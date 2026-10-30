@@ -1,0 +1,20 @@
+# build output
+target/
+
+# server password used by commit-and-deploy.sh
+.deploy-password
+
+# keystores contain private keys; the server has its own in /etc/ssl/private
+*.p12
+
+# outdated documentation of the old API
+*.docx
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
