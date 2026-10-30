@@ -1,4 +1,4 @@
-package com.viimeiset.bookstore.service;
+package fi.haagahelia.bookstore.service;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.viimeiset.bookstore.domain.AppUser;
-import com.viimeiset.bookstore.domain.AppUserRepository;
+import fi.haagahelia.bookstore.domain.AppUser;
+import fi.haagahelia.bookstore.domain.AppUserRepository;
 
 @Service
 public class UserDetailService implements UserDetailsService {

@@ -1,4 +1,4 @@
-package com.viimeiset.bookstore.domain;
+package fi.haagahelia.bookstore.domain;
 
 import org.springframework.data.repository.CrudRepository;
 

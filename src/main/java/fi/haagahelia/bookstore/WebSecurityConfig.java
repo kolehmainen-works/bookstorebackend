@@ -1,4 +1,4 @@
-package com.viimeiset.bookstore;
+package fi.haagahelia.bookstore;
 
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
@@ -38,7 +38,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
-import com.viimeiset.bookstore.service.JwtService;
+import fi.haagahelia.bookstore.service.JwtService;
 
 /**
  * Stateless REST API: the only way to authenticate is a JWT in the
@@ -65,7 +65,7 @@ public class WebSecurityConfig {
 				.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 				.requestMatchers("/api/auth/**").permitAll()
 				.requestMatchers("/error").permitAll()
-				.requestMatchers(HttpMethod.DELETE, "/api/books/**").hasAuthority("ROLE_ADMIN")
+				// who may see or change which book is checked in BookController
 				.anyRequest().authenticated()
 			)
 			.oauth2ResourceServer(oauth2 -> oauth2

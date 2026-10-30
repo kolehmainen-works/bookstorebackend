@@ -1,4 +1,4 @@
-package com.viimeiset.bookstore.service;
+package fi.haagahelia.bookstore.service;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

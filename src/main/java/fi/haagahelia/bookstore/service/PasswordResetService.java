@@ -1,4 +1,4 @@
-package com.viimeiset.bookstore.service;
+package fi.haagahelia.bookstore.service;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -10,8 +10,8 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.viimeiset.bookstore.domain.AppUser;
-import com.viimeiset.bookstore.domain.AppUserRepository;
+import fi.haagahelia.bookstore.domain.AppUser;
+import fi.haagahelia.bookstore.domain.AppUserRepository;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;

@@ -1,4 +1,7 @@
-package com.viimeiset.bookstore.domain;
+package fi.haagahelia.bookstore.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +34,11 @@ public class Book {
 
 	@ManyToOne
 	private Category category;
+
+	// the user who added the book; sent to the client only as ownerUsername
+	@JsonIgnore
+	@ManyToOne
+	private AppUser owner;
 
 	public Book() {
 	}
@@ -98,6 +106,19 @@ public class Book {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public AppUser getOwner() {
+		return owner;
+	}
+
+	public void setOwner(AppUser owner) {
+		this.owner = owner;
+	}
+
+	@JsonProperty(access = JsonProperty.Access.READ_ONLY)
+	public String getOwnerUsername() {
+		return owner == null ? null : owner.getUsername();
 	}
 
 	@Override

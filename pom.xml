@@ -9,7 +9,7 @@
 		<relativePath />
 		<!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.viimeiset</groupId>
+	<groupId>fi.haagahelia</groupId>
 	<artifactId>bookstorebackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bookstorebackend</name>

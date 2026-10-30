@@ -1,4 +1,4 @@
-package com.viimeiset.bookstore;
+package fi.haagahelia.bookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

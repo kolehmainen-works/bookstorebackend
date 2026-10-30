@@ -10,14 +10,21 @@ Send the token from the login as `Authorization: Bearer <token>`.
 
 | Endpoint | Access |
 |---|---|
+| `POST /api/auth/signup` `{username, email, password, passwordCheck}` → same as login | everyone |
 | `POST /api/auth/login` `{username, password}` → `{token, expiresAt, username, roles}` | everyone |
 | `POST /api/auth/forgot-password` `{email}` | everyone |
 | `POST /api/auth/reset-password` `{token, password, passwordCheck}` | everyone |
-| `GET /api/books`, `GET /api/books/{id}`, `GET /api/categories` | signed in |
-| `POST /api/books`, `PUT /api/books/{id}` | signed in |
-| `DELETE /api/books/{id}` | `ROLE_ADMIN` |
+| `GET /api/books`, `GET /api/books/{id}` | signed in: own books; admin: all |
+| `POST /api/books` | signed in; the book belongs to the signed-in user |
+| `PUT /api/books/{id}`, `DELETE /api/books/{id}` | the book's owner, or an admin |
+| `GET /api/categories` | signed in |
+| `DELETE /api/users/me` | signed in; deletes the account and its books |
 
-An empty database gets demo data: users `user`/`user` and `admin`/`admin`, and twelve books.
+Each book belongs to the user who added it (`ownerUsername` in the JSON). Other users' books
+answer 404 as if they did not exist. Signup creates `ROLE_USER` accounts.
+
+An empty database gets demo data: users `user`/`user` and `admin`/`admin`, and twelve books
+owned by `user`. Books without an owner are given to `user` at startup.
 
 ## Configuration
 

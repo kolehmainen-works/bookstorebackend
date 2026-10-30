@@ -1,6 +1,7 @@
-package com.viimeiset.bookstore.domain;
+package fi.haagahelia.bookstore.domain;
 
 import java.time.Instant;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 // same table as kolehmainenbookstore, so its users keep working
@@ -42,6 +44,11 @@ public class AppUser {
 	@JsonIgnore
 	@Column(name = "reset_token_expires_at")
 	private Instant resetTokenExpiresAt;
+
+	// the books this user has added; each user sees only these
+	@JsonIgnore
+	@OneToMany(mappedBy = "owner")
+	private List<Book> books;
 
 	public AppUser() {
 	}
@@ -107,6 +114,14 @@ public class AppUser {
 
 	public void setResetTokenExpiresAt(Instant resetTokenExpiresAt) {
 		this.resetTokenExpiresAt = resetTokenExpiresAt;
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 }
