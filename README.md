@@ -1,7 +1,7 @@
 # bookstorebackend
 
 Bookstore REST API: Spring Boot 3, MySQL, JWT authentication and password reset by email.
-The frontend is [bookstorefrontend](https://github.com/kolehmainen-works/bookstorefrontend.github.io)
+The frontend is [bookstorefrontend](https://github.com/kolehmainen-works/bookstorefrontend)
 (live: https://kolehmainen-works.github.io/bookstorefrontend.github.io/).
 
 ## API
